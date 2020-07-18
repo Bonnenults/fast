@@ -35,27 +35,27 @@ public class R<T> implements Serializable
         return restResult(data, Constants.SUCCESS, msg);
     }
 
-    public static <T> R<T> failed()
+    public static <T> R<T> error()
     {
         return restResult(null, Constants.FAIL, null);
     }
 
-    public static <T> R<T> failed(String msg)
+    public static <T> R<T> error(String msg)
     {
         return restResult(null, Constants.FAIL, msg);
     }
 
-    public static <T> R<T> failed(T data)
+    public static <T> R<T> error(T data)
     {
         return restResult(data, Constants.FAIL, null);
     }
 
-    public static <T> R<T> failed(T data, String msg)
+    public static <T> R<T> error(T data, String msg)
     {
         return restResult(data, Constants.FAIL, msg);
     }
 
-    public static <T> R<T> failed(int code, String msg)
+    public static <T> R<T> error(int code, String msg)
     {
         return restResult(null, code, msg);
     }
