@@ -1,8 +1,7 @@
-spring.ja:
+spring:
   #»·¾³
   profiles:
     active: dev
-spring:
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8

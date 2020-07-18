@@ -21,6 +21,7 @@
         <druid.version>1.1.13</druid.version>
         <shiro.version>1.4.0</shiro.version>
         <jwt.version>0.7.0</jwt.version>
+        <swagger.version>2.7.0</swagger.version>
     </properties>
 
     <dependencies>
@@ -107,6 +108,17 @@
             <artifactId>jjwt</artifactId>
             <version>${jwt.version}</version>
         </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
+
     </dependencies>
 
     <build>
