@@ -13,7 +13,7 @@ import java.io.Serializable;
 @Data
 @TableName()
 public class SysUserRole implements Serializable {
-    private static final long serialVersionUID = -51005963144954661L;
+    private static final long serialVersionUID = 1L;
 
     private Long id;
     /**

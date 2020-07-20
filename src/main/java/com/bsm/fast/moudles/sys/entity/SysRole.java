@@ -15,7 +15,7 @@ import java.util.Date;
 @Data
 @TableName("sys_role")
 public class SysRole implements Serializable {
-    private static final long serialVersionUID = -78619396176761305L;
+    private static final long serialVersionUID = 1L;
 
     @TableId
     private Long roleId;

@@ -1,7 +1,13 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /fast
+
 spring:
-  #»·¾³
+
   profiles:
     active: dev
+
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
@@ -12,3 +18,34 @@ spring:
       enabled: true
   mvc:
     throw-exception-if-no-handler-found: true
+
+#mybatis
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
+
+  typeAliasesPackage: com.bsm.fast.modules.*.entity
+  global-config:
+
+    db-config:
+
+      id-type: AUTO
+      logic-delete-value: -1
+      logic-not-delete-value: 0
+    banner: false
+
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+    call-setters-on-nulls: true
+    jdbc-type-for-null: 'null'
+
+fast:
+  redis:
+    open: false
+  shiro:
+    redis: false
+  jwt:
+
+    secret: f4e2e52034348f86b67cde581c0f9eb5
+    expire: 604800
+    header: token

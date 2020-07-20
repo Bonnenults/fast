@@ -17,7 +17,7 @@ import java.util.Date;
 @Data
 @TableName("sys_user")
 public class SysUser implements Serializable {
-    private static final long serialVersionUID = -33232028545951541L;
+    private static final long serialVersionUID = 1L;
 
     @TableId
     private Long userId;

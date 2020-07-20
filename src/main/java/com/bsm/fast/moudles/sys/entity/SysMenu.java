@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
  * 菜单管理(SysMenu)表实体类
  *
@@ -12,9 +14,9 @@ import lombok.Data;
  */
 @Data
 @TableName("sys_menu")
-public class SysMenu {
+public class SysMenu implements Serializable {
 
-    private static final long serialVersionUID = -3571922011436468139L;
+    private static final long serialVersionUID = 1L;
 
     @TableId
     private Long menuId;
