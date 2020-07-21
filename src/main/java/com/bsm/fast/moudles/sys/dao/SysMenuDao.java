@@ -1,7 +1,7 @@
 package com.bsm.fast.moudles.sys.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.bsm.fast.moudles.sys.entity.SysMenu;
+import com.bsm.fast.moudles.sys.model.entity.SysMenu;
 import org.apache.ibatis.annotations.Mapper;
 
 /**

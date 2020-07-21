@@ -1,4 +1,4 @@
-package com.bsm.fast.moudles.sys.entity;
+package com.bsm.fast.moudles.sys.model.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;

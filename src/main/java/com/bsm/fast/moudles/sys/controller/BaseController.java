@@ -1,7 +1,7 @@
 package com.bsm.fast.moudles.sys.controller;
 
 
-import com.bsm.fast.moudles.sys.entity.SysUser;
+import com.bsm.fast.moudles.sys.model.entity.SysUser;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
 

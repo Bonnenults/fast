@@ -1,4 +1,4 @@
-package com.bsm.fast.moudles.sys.entity;
+package com.bsm.fast.moudles.sys.model.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -48,7 +48,7 @@ public class SysUser implements Serializable {
     /**
      * 状态  0：禁用   1：正常
      */
-    private Object status;
+    private Integer status;
     /**
      * 创建者ID
      */

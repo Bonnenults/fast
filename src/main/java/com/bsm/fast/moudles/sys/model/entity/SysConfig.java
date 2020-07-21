@@ -1,8 +1,7 @@
-package com.bsm.fast.moudles.sys.entity;
+package com.bsm.fast.moudles.sys.model.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.baomidou.mybatisplus.extension.activerecord.Model;
 import lombok.Data;
 
 import java.io.Serializable;

@@ -1,9 +1,8 @@
 package com.bsm.fast.moudles.sys.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.bsm.fast.moudles.sys.entity.SysRole;
+import com.bsm.fast.moudles.sys.model.entity.SysRole;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 

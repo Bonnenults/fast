@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.bsm.fast.common.domain.Query;
 import com.bsm.fast.common.utils.PageUtils;
 import com.bsm.fast.moudles.sys.dao.SysUserDao;
-import com.bsm.fast.moudles.sys.entity.SysUser;
+import com.bsm.fast.moudles.sys.model.entity.SysUser;
 import com.bsm.fast.moudles.sys.service.SysUserService;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Service;
