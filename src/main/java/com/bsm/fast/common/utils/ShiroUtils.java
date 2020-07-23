@@ -1,7 +1,7 @@
 package com.bsm.fast.common.utils;
 
 import com.bsm.fast.common.exception.BizException;
-import com.bsm.fast.moudles.sys.model.entity.SysUser;
+import com.bsm.fast.modules.sys.model.entity.SysUser;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.crypto.hash.SimpleHash;
 import org.apache.shiro.session.Session;

@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8081
   servlet:
     context-path: /fast
 
@@ -40,13 +40,7 @@ mybatis-plus:
     jdbc-type-for-null: 'null'
 
 fast:
+  cluster: false  #集群配置  true集群环境   false单机环境，还需打开pom.xml里的spring-session-data-redis注释
+  globalSessionTimeout: 3600   #单机环境，session过期时间为60分钟
   redis:
-    open: false
-  shiro:
-    redis: false
-  jwt:
-    # 加密秘钥
-    secret: f4e2e52034348f86b67cde581c0f9eb5
-    # token有效时长，7天，单位秒
-    expire: 604800
-    header: token
+    open: false  #是否开启redis缓存  true开启   false关闭
