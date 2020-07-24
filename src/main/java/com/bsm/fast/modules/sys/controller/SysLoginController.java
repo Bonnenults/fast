@@ -48,6 +48,7 @@ public class SysLoginController {
         ImageIO.write(image, "jpg", out);
 
     }
+
     @ApiOperation("登录")
     @PostMapping(value = "/login")
     public R login(@RequestBody LoginParam param) {
@@ -71,6 +72,15 @@ public class SysLoginController {
             return R.error("账户验证失败");
         }
 
+        return R.ok();
+    }
+
+    /**
+     * 退出
+     */
+    @RequestMapping(value = "logout", method = RequestMethod.GET)
+    public R logout() {
+        ShiroUtils.logout();
         return R.ok();
     }
 }

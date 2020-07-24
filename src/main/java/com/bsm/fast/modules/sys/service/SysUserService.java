@@ -12,4 +12,6 @@ public interface SysUserService extends IService<SysUser> {
      * 所有用户列表
      */
     PageUtils listSysUser(Map<String, Object> params);
+
+    boolean changePassword(long userId, String password, String newPassword);
 }

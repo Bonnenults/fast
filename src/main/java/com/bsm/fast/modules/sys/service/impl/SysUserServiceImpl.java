@@ -17,16 +17,24 @@ import java.util.Map;
 public class SysUserServiceImpl extends ServiceImpl<SysUserDao, SysUser> implements SysUserService {
 
     @Override
-    public PageUtils listSysUser(Map<String,Object> params){
-        String username = (String)params.get("username");
-        Long createUserId = (Long)params.get("createUserId");
+    public PageUtils listSysUser(Map<String, Object> params) {
+        String username = (String) params.get("username");
+        Long createUserId = (Long) params.get("createUserId");
 
         IPage<SysUser> page = this.page(
                 new Query<SysUser>().getPage(params),
                 new QueryWrapper<SysUser>()
-                        .like(StringUtils.isNotBlank(username),"username",username)
-                        .eq(createUserId != null,"create_user_id",createUserId)
+                        .like(StringUtils.isNotBlank(username), "username", username)
+                        .eq(createUserId != null, "create_user_id", createUserId)
         );
         return new PageUtils(page);
+    }
+
+    @Override
+    public boolean changePassword(long userId, String password, String newPassword) {
+        SysUser user = new SysUser();
+        user.setPassword(newPassword);
+
+        return this.update(user, new QueryWrapper<SysUser>().eq("user_id", userId).eq("password", password));
     }
 }
