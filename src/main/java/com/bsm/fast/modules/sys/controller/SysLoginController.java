@@ -51,20 +51,20 @@ public class SysLoginController {
 
     @ApiOperation("登录")
     @PostMapping(value = "/login")
-    public R login(@RequestBody LoginParam param) {
+    public R login(String username, String password, String captcha) {
         String code = ShiroUtils.getKaptcha(Constants.KAPTCHA_SESSION_KEY);
-        if (!code.equals(param.getCaptcha())) {
+        if (!code.equals(captcha)) {
             return R.error("验证码不正确");
         }
         try {
             Subject subject = ShiroUtils.getSubject();
-            log.info("username:{},password:{}",param.getUsername(),param.getPassword());
-            UsernamePasswordToken token = new UsernamePasswordToken(param.getUsername(), param.getPassword());
-            log.info("token:{}",token.toString());
+            log.info("username:{},password:{}", username, password);
+            UsernamePasswordToken token = new UsernamePasswordToken(username, password);
+            log.info("token:{}", token.toString());
             subject.login(token);
         } catch (UnknownAccountException e) {
             return R.error(e.getMessage());
-        } catch (IncorrectCredentialsException e){
+        } catch (IncorrectCredentialsException e) {
             return R.error("账户或密码不正确");
         } catch (LockedAccountException e) {
             return R.error("账户被锁定，请联系管理员");

@@ -50,6 +50,8 @@ public class ShiroConfig {
         ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
         // Shiro的核心安全接口,这个属性是必须的
         shiroFilterFactoryBean.setSecurityManager(securityManager);
+        shiroFilterFactoryBean.setLoginUrl("/login.html");
+        shiroFilterFactoryBean.setUnauthorizedUrl("/");
 
         //oauth过滤
         Map<String, Filter> filters = new HashMap<>();
@@ -57,18 +59,33 @@ public class ShiroConfig {
         shiroFilterFactoryBean.setFilters(filters);
 
         // Shiro连接约束配置，即过滤链的定义
+//        Map<String, String> filterMap = new LinkedHashMap<>();
+//        filterMap.put("/webjars/**", "anon");
+//        filterMap.put("/druid/**", "anon");
+//        filterMap.put("/app/**", "anon");
+//        filterMap.put("/swagger/**", "anon");
+//        filterMap.put("/v2/api-docs", "anon");
+//        filterMap.put("/swagger-ui.html", "anon");
+//        filterMap.put("/swagger-resources/**", "anon");
+//        filterMap.put("/sys/captcha.jpg", "anon");
+//        filterMap.put("/**", "oauth2");
+//        filterMap.put("/statics/**", "anon");
+//        filterMap.put("/login.html", "anon");
+//        filterMap.put("/sys/login", "anon");
+//        filterMap.put("/favicon.ico", "anon");
         Map<String, String> filterMap = new LinkedHashMap<>();
-        filterMap.put("/webjars/**", "anon");
-        filterMap.put("/druid/**", "anon");
-        filterMap.put("/app/**", "anon");
-        filterMap.put("/sys/login", "anon");
         filterMap.put("/swagger/**", "anon");
         filterMap.put("/v2/api-docs", "anon");
         filterMap.put("/swagger-ui.html", "anon");
+        filterMap.put("/webjars/**", "anon");
         filterMap.put("/swagger-resources/**", "anon");
+
+        filterMap.put("/statics/**", "anon");
+        filterMap.put("/login.html", "anon");
+        filterMap.put("/sys/login", "anon");
+        filterMap.put("/favicon.ico", "anon");
         filterMap.put("/sys/captcha.jpg", "anon");
-        filterMap.put("/aaa.txt", "anon");
-        filterMap.put("/**", "oauth2");
+        filterMap.put("/**", "authc");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterMap);
 
         return shiroFilterFactoryBean;
