@@ -19,7 +19,7 @@ public interface SysUserRoleDao extends BaseMapper<SysUserRole> {
      */
     List<Long> queryRoleIdList(Long userId);
 
-
+    List<Long> queryAllMenuId(Long userId);
     /**
      * 根据角色ID数组，批量删除
      */

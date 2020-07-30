@@ -1,10 +1,12 @@
 package com.bsm.fast.modules.sys.model.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * 菜单管理(SysMenu)表实体类
@@ -41,5 +43,14 @@ public class SysMenu implements Serializable {
 
     //排序
     private Integer orderNum;
+
+    /**
+     * ztree属性
+     */
+    @TableField(exist=false)
+    private Boolean open;
+
+    @TableField(exist=false)
+    private List<?> list;
 
 }

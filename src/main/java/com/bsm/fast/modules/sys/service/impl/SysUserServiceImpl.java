@@ -11,6 +11,7 @@ import com.bsm.fast.modules.sys.service.SysUserService;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Map;
 
 @Service("SysUserService")
@@ -36,5 +37,11 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserDao, SysUser> impleme
         user.setPassword(newPassword);
 
         return this.update(user, new QueryWrapper<SysUser>().eq("user_id", userId).eq("password", password));
+    }
+
+
+    @Override
+    public List<Long> queryAllMenuId(Long userId) {
+        return baseMapper.queryAllMenuId(userId);
     }
 }
